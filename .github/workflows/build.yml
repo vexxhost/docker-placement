@@ -16,12 +16,12 @@ jobs:
       id-token: write
       packages: write
     steps:
-      - uses: vexxhost/docker-atmosphere/.github/actions/checkout@main
+      - uses: vexxhost/docker-atmosphere/.github/actions/checkout@2023.1
         with:
           repository: openstack/placement
-          ref: 2df2316c370128ee3aaca2179b7a4b33d96f37ae
+          ref: 938fc62550d1a20b5e573a96c03528e79d109b30
 
-      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@main
+      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@2023.1
         with:
           image-name: placement
           build-contexts: placement=openstack/placement
