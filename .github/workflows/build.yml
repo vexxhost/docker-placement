@@ -16,13 +16,14 @@ jobs:
       id-token: write
       packages: write
     steps:
-      - uses: vexxhost/docker-atmosphere/.github/actions/checkout@main
+      - uses: vexxhost/docker-atmosphere/.github/actions/checkout@stable/zed
         with:
           repository: openstack/placement
-          ref: 2df2316c370128ee3aaca2179b7a4b33d96f37ae
+          ref: f3dd87c88aefe3597667f5e24c93127670a3775c
 
-      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@main
+      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@stable/zed
         with:
           image-name: placement
+          base-image-tag: zed
           build-contexts: placement=openstack/placement
           push: ${{ github.event_name != 'pull_request' }}
