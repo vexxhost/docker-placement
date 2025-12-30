@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Atmosphere-Rebuild-Time: 2024-06-25T22:49:25Z
 
-FROM ghcr.io/vexxhost/openstack-venv-builder:2025.1@sha256:5185f78a6cd7faf338222ce9a450b382f5c1c069759b9b15e82fa24f9c0ff6c2 AS build
+FROM ghcr.io/vexxhost/openstack-venv-builder:2025.1@sha256:914d262dc61031a01dad24a222621f9b9456e535a7edf2b97d62225a9c4d0b20 AS build
 RUN --mount=type=bind,from=placement,source=/,target=/src/placement,readwrite <<EOF bash -xe
 uv pip install \
     --constraint /upper-constraints.txt \
