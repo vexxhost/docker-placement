@@ -20,7 +20,7 @@ jobs:
       - uses: vexxhost/docker-atmosphere/.github/actions/checkout@main
         with:
           repository: openstack/placement
-          ref: 6fdd8ed5c525b620cb9e696b6c5175095b9c62e6 # master
+          ref: 97a81217ba4c586d6148b4c30f6a30f17bffd0dd # master
 
       - uses: vexxhost/docker-atmosphere/.github/actions/build-image@main
         with:
