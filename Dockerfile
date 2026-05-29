@@ -9,7 +9,7 @@ uv pip install \
         /src/placement
 EOF
 
-FROM ghcr.io/vexxhost/python-base:2025.1@sha256:7690f6e2dc0533e58733ccad9dac3245bfcbeb7896a58a1228d813064134c7f3
+FROM ghcr.io/vexxhost/python-base:2025.1@sha256:5ea4f39a787bbe5b131980c5430ce43bf56c33f86d4e78890b1df2c26029ebdc
 RUN \
     groupadd -g 42424 placement && \
     useradd -u 42424 -g 42424 -M -d /var/lib/placement -s /usr/sbin/nologin -c "Placement User" placement && \
