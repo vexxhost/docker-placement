@@ -2,14 +2,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Atmosphere-Rebuild-Time: 2024-06-25T22:49:25Z
 
-FROM ghcr.io/vexxhost/openstack-venv-builder:2025.1@sha256:c8fce46ccda5251f5c59006603cc0594599b2d73b65eabbc8d73bec103846541 AS build
+FROM ghcr.io/vexxhost/openstack-venv-builder:2025.1@sha256:87865c197c5ee70a2159de714abf3a08598531d5c3d43a52426df702656dfdd4 AS build
 RUN --mount=type=bind,from=placement,source=/,target=/src/placement,readwrite <<EOF bash -xe
 uv pip install \
     --constraint /upper-constraints.txt \
         /src/placement
 EOF
 
-FROM ghcr.io/vexxhost/python-base:2025.1@sha256:aa2dc02c5662a08071a27d11ecc1bc9d9690c68c6006caa48c18fb9501818bc3
+FROM ghcr.io/vexxhost/python-base:2025.1@sha256:ac7a5786f1c2f42c44e61b71b6068ee799e340a287b9f71dde0934d6098982d7
 RUN \
     groupadd -g 42424 placement && \
     useradd -u 42424 -g 42424 -M -d /var/lib/placement -s /usr/sbin/nologin -c "Placement User" placement && \
